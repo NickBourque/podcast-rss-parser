@@ -21,6 +21,8 @@ class CreateEpisodesTable extends Migration
             $table->text('audio_url')->nullable();
             $table->text('episode_url')->nullable();
             $table->timestamps();
+
+            $table->foreign('podcast_id')->references('id')->on('podcasts')->onDelete('CASCADE');
         });
     }
 
