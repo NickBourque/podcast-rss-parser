@@ -15,6 +15,11 @@ class CreateEpisodesTable extends Migration
     {
         Schema::create('episodes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('podcast_id');
+            $table->string('title');
+            $table->string('description');
+            $table->string('audio_url');
+            $table->string('episode_url')->nullable();
             $table->timestamps();
         });
     }
